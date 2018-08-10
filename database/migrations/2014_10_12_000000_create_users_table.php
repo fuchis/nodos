@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('carrera');
             $table->string('matricula')->unique();
+            $table->string('carrera');
             $table->string('rol');
             $table->boolean('admin');
             $table->string('password');
