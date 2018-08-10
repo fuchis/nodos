@@ -15,4 +15,4 @@
     Route::get('/usuarios', ['as' => 'users', 'uses' => 'PagesController@usuarios']);
     Route::post('/new', ['as' => 'new', 'uses' => 'PagesController@formulario']);
     Route::get('/registro', ['as' => 'registro', 'uses' => 'PagesController@registro']);
-    // Route::resource('usuarios','UsersController');
+    
