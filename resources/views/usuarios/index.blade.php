@@ -5,7 +5,7 @@
             <input type="text" name="searchUser" placeholder="Buscar" value="">
         </div>
         <div class="">
-            <a href="#">Nuevo Usuario</a>
+            <a href="{{route("users.create")}}">Nuevo Usuario</a>
         </div>
         <thead>
             <tr>

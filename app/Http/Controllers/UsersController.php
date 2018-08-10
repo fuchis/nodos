@@ -13,7 +13,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        return view("usuarios/index");
     }
 
     /**
@@ -23,7 +23,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view("usuarios/create");
     }
 
     /**
@@ -34,7 +34,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "<h1>store</h1>";
     }
 
     /**

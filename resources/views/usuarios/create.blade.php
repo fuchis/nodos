@@ -1,12 +1,11 @@
 @extends('layout')
-
 @section('contenido')
     @if( session()->has("info"))
         <div class="notificacion">
             <h4>{{session("info")}}</h4>
         </div>
     @else
-        <form class="" action="new" method="post">
+        <form class="" action="{{route("users.store")}}" method="post">
             {!!csrf_field()!!}
             <table>
                 <tr>
