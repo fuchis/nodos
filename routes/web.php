@@ -12,7 +12,7 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
-    Route::resource("users", "UsersController");
+Route::resource("users", "UsersController");
 
 
 

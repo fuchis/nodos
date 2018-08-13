@@ -61,11 +61,11 @@
                         <select class="" id="carrera" name="carrera">
                             <option value=""></option>
 
-                            <option value="Ing. Bioquimica" {{old("rol") == "Ing. Bioquimica" ? "selected" : "" }}>Ing. Bioquimica</option>
+                            <option value="Ing. Bioquimica" {{old("carrera") == "Ing. Bioquimica" ? "selected" : "" }}>Ing. Bioquimica</option>
 
-                            <option value="Ing. Sistemas Computacionales" {{old("rol") == "Ing. Sistemas Computacionales" ? "selected" : "" }}>Ing. Sistemas Computacionales</option>
-                            <option value="Ing. Electronica" {{old("rol") == "Ing. Electronica" ? "selected" : "" }}>Ing. Electronica</option>
-                            <option value="Ing. Bioquimica" {{old("rol") == "Ing. Bioquimica" ? "selected" : "" }}>Ing. Bioquimica</option>
+                            <option value="Ing. Sistemas Computacionales" {{old("carrera") == "Ing. Sistemas Computacionales" ? "selected" : "" }}>Ing. Sistemas Computacionales</option>
+                            <option value="Ing. Electronica" {{old("carrera") == "Ing. Electronica" ? "selected" : "" }}>Ing. Electronica</option>
+                            <option value="Ing. Bioquimica" {{old("carrera") == "Ing. Bioquimica" ? "selected" : "" }}>Ing. Bioquimica</option>
                         </select>
                         {!! $errors->first("carrera", "<span class=error>:message</span>")!!}
                     </td>
@@ -93,13 +93,16 @@
                         <label>Tipo:</label>
                     </td>
                     <td>
-                        <label for="admin">Administrador</label>
-                        <input type="radio" id="admin" name="tipoUser" value="admin" {{old("tipoUser") == "admin" ? "checked" : "" }}>
+                        <label for="administrador">Administrador</label>
+                        <input type="radio" id="administrador" name="tipoDeUsuario" value="administrador" {{old("tipoDeUsuario") == "administrador" ? "checked" : "" }}>
 
-                        <label for="asist">Asistente</label>
-                        <input type="radio" id="asist" name="tipoUser" value="asist" {{old("tipoUser") == "asist" ? "checked" : "" }}>
+                        <label for="asistente">Asistente</label>
+                        <input type="radio" id="asistente" name="tipoDeUsuario" value="asistente" {{old("tipoDeUsuario") == "asistente" ? "checked" : "" }}>
 
-                        {!! $errors->first("tipoUser", "<span class=error>:message</span>")!!}
+                        <label for="usuario">Usuario</label>
+                        <input type="radio" id="usuario" name="tipoDeUsuario" value="usuario" {{old("tipoDeUsuario") == "usuario" ? "checked" : "" }}>
+
+                        {!! $errors->first("tipoDeUsuario", "<span class=error>:message</span>")!!}
                     </td>
                 </tr>
                 <tr>

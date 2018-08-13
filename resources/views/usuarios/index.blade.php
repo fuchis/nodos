@@ -1,6 +1,7 @@
 @extends('layout')
 @section('contenido')
-    <table>
+
+    <table width="100%" border="1">
         <div class="">
             <input type="text" name="searchUser" placeholder="Buscar" value="">
         </div>
@@ -9,31 +10,31 @@
         </div>
         <thead>
             <tr>
+                <th>Foto</th>
                 <th>Nombres</th>
                 <th>Apellidos</th>
                 <th>Carrera</th>
+                <th>Matrícula</th>
                 <th>Rol</th>
                 <th>Correo</th>
                 <th>Teléfono</th>
+                <th>Tipo de Usuario</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            @foreach ($users as $user)
                 <tr>
-                    <td>Daniel Alfonso</td>
-                    <td>Jiménez Suárez</td>
-                    <td>Sistemas</td>
-                    <td>Servicio Social</td>
-                    <td>kanakemandatos@gmail.com</td>
-                    <td>9341127035</td>
-                    <td>
-                        <a href="#">Editar</a>
-                    </td>
-                    <td>
-                        <a href="#">Ver Horas</a>
-                    </td>
+                    <td>{{$user->foto}}</td>
+                    <td>{{$user->nombres}}</td>
+                    <td>{{$user->apellidos}}</td>
+                    <td>{{$user->carrera}}</td>
+                    <td>{{$user->matricula}}</td>
+                    <td>{{$user->rol}}</td>
+                    <td>{{$user->correo}}</td>
+                    <td>{{$user->telefono}}</td>
+                    <td>{{$user->tipo_de_usuario}}</td>
                 </tr>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 @stop

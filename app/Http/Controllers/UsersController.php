@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CreateUserRequest;
+use Carbon\Carbon;
 class UsersController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view("usuarios/index");
+        $users = DB::table("users")->get();
+        return view("usuarios.index", compact("users"));
     }
 
     /**
@@ -24,7 +26,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view("usuarios/create");
+        return view("usuarios.create");
     }
 
     /**
@@ -33,9 +35,24 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
-        return "<h1>store</h1>";
+        DB::table("users")->insert([
+            "nombres" => ucwords($request->input("nombres")),
+            "apellidos" => ucwords($request->input("apellidos")),
+            "telefono" => $request->input("telefono"),
+            "correo" => strtolower($request->input("correo")),
+            "matricula" => strtoupper($request->input("matricula")),
+            "carrera" => $request->input("carrera"),
+            "rol" => $request->input("rol"),
+            "foto" => $request->input("foto"),
+            "tipo_de_usuario" => ucfirst($request->input("tipoDeUsuario")),
+            "created_at" => Carbon::now(),
+            "updated_at" => Carbon::now(),
+        ]);
+
+        // return $request->all();
+        return redirect()->route("users.index");
     }
 
     /**
