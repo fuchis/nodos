@@ -30,9 +30,9 @@ class CreateUserRequest extends FormRequest
             "correo" => "required|email",
             "carrera" => "required",
             "rol" => "required",
-            "matricula" => "required",
-            "tipoUser" => "required|in:admin,asist",
-            "foto" => "required",
+            "matricula" => "",
+            "tipoDeUsuario" => "required|in:administrador,asistente,usuario",
+            "foto" => "",
         ];
     }
 }

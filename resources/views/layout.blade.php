@@ -25,10 +25,10 @@
             } ?>
             <nav>
                 <a class="{{activeMenu('/')}}" href="{{route("home")}}">
-                    <img src="descarga.jpg" alt="">
+                    <img src="/descarga.jpg" alt="">
                 </a>
-                <a class="{{activeMenu('usuarios')}}" href="{{route("users")}}">Usuarios</a>
-                <a class="{{activeMenu('registro')}}" href="{{route("registro")}}">Registro</a>
+                <a class="{{activeMenu('users.index')}}" href="{{route("users.index")}}">Usuarios</a>
+                {{-- <a class="{{activeMenu('registro')}}" href="{{route("registro")}}">Registro</a> --}}
                 <a href="">Cerrar Sesión</a>
             </nav>
         </header>

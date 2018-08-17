@@ -11,8 +11,11 @@
 |
 */
 
-    Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
-    Route::get('/usuarios', ['as' => 'users', 'uses' => 'PagesController@usuarios']);
-    Route::post('/new', ['as' => 'new', 'uses' => 'PagesController@formulario']);
-    Route::get('/registro', ['as' => 'registro', 'uses' => 'PagesController@registro']);
-    // Route::resource('usuarios','UsersController');
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+Route::resource("users", "UsersController");
+
+
+
+    // Route::get('/usuarios', ['as' => 'users', 'uses' => 'PagesController@usuarios']);
+    // Route::post('/new', ['as' => 'new', 'uses' => 'PagesController@formulario']);
+    // Route::get('/registro', ['as' => 'registro', 'uses' => 'PagesController@registro']);

@@ -24,13 +24,17 @@ class CreateUsersTable extends Migration
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('telefono');
-            $table->string('email')->unique();
-            $table->string('carrera');
-            $table->string('matricula')->unique();
+            $table->string('correo')->unique();
+            $table->string('matricula')
+                ->unique()
+                ->nullable();
             $table->string('carrera');
             $table->string('rol');
-            $table->boolean('admin');
-            $table->string('password');
+            $table->string('tipo_de_usuario');
+            $table->string('foto')
+                ->nullable();
+            $table->string('password')
+                ->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
