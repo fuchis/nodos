@@ -63,7 +63,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = DB::table("users")->where("id", $id)->first();
+        return view("usuarios.show", compact("user"));
     }
 
     /**
@@ -74,7 +75,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = DB::table("users")->where("id", $id)->first();
+        return view("usuarios.edit", compact("user"));
     }
 
     /**

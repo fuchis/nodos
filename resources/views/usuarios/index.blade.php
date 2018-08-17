@@ -19,6 +19,7 @@
                 <th>Correo</th>
                 <th>Teléfono</th>
                 <th>Tipo de Usuario</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +34,9 @@
                     <td>{{$user->correo}}</td>
                     <td>{{$user->telefono}}</td>
                     <td>{{$user->tipo_de_usuario}}</td>
+                    <td>
+                        <a href="users/{{$user->id}}/edit">Editar</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
